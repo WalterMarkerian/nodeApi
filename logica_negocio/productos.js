@@ -11,7 +11,7 @@ const obtenerTodos = async(req, res) => {
  }
 
 const obtenerUno = async(req, res) => {
-  const data = await DAO.getOne(req.params.catid)
+  const data = await DAO.getOne(req.params.pid)
   res.status(200).json(data)
  }
 
@@ -21,7 +21,7 @@ const actualizarProducto = async(req, res) => {
  }
 
 const borrarProducto = async(req, res) => {
-  const code = await DAO.deleteOne(req.params.catid)
+  const code = await DAO.deleteOne(req.params.pid)
   res.status(code).send()
 }
  
