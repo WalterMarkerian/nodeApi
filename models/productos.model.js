@@ -5,7 +5,7 @@ class Productos extends Model { }
 
 Productos.init({
     id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         primaryKey: true,
         autoIncrement: true
     },
@@ -13,8 +13,16 @@ Productos.init({
         type: DataTypes.STRING(200),
         allowNull: false
     },
+    descripcion: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
     precio: {
-        type: DataTypes.INTEGER(200),
+        type: DataTypes.DOUBLE,
+        allowNull: false
+    },
+    imageUrl: {
+        type: DataTypes.STRING(300),
         allowNull: false
     }
 }, {
