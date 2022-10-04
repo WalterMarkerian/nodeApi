@@ -16,7 +16,7 @@ const obtenerUno = async(req, res) => {
  }
 
 const actualizarProducto = async(req, res) => {
-  const data = await DAO.updateOne(req.params.catid, req.body)
+  const data = await DAO.updateOne(req.params.pid, req.body)
   res.status(200).json(data)
  }
 

@@ -1,23 +1,26 @@
 const { Productos } = require('../models')
 
-const getAll = async() => {
+const getAll = async () => {
   const data = await Productos.findAll()
   return data
- }
+}
 
-const getOne = async(id) => {
+const getOne = async (id) => {
   const data = await Productos.findByPk(id)
   return data
- }
+}
 
 const updateOne = async (id, datos) => {
   const data = await getOne(id);
-  data.nombre = datos.nombre;
+  data.nombre = datos.nombre,
+  data.descripcion = datos.descripcion,
+  data.precio = datos.precio,
+  data.imageUrl = datos.imageUrl,
   data.save()
   return data
- }
+}
 
-const deleteOne = async(id) => { 
+const deleteOne = async (id) => {
   await Productos.destroy({
     where: {
       id
@@ -30,4 +33,4 @@ const saveOne = async (datos) => {
   const data = await Productos.create({ ...datos })
   return data
 }
-module.exports = {getAll, getOne, updateOne, deleteOne, saveOne}
+module.exports = { getAll, getOne, updateOne, deleteOne, saveOne }

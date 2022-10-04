@@ -1,7 +1,9 @@
-POST http://localhost:4000/productos
+POST http://localhost:4000/productos/add
 Content-Type: application/json
 
 {
   "nombre": "producto 1",
-  "precio": 300
+  "descripcion":"asdasadasd",
+  "precio": 300,
+  "imageUrl": "www.ssss.com"
 }
